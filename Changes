@@ -1,0 +1,40 @@
+Revision history for HTTP-Daemon
+
+6.06      2019-08-29 14:23:17Z
+  - Delimit IPv6 numeric address with brackets and URI-quote an IPv6 zone
+    separator in url() method output (GH#32) (Petr Pisar)
+  - Handle undef and empty LocalAddr value in new() constructor as an
+    unspecified address (GH#24, RT#123069) (Petr Pisar)
+  - Use IO::Socket::IP for IPv6 support. (GH#31) (Chase Whitener)
+
+6.05      2019-07-26 20:41:05Z
+  - Added the .perltidyrc from the libwww-perl distribution
+  - Tidied the test suite with perltidy
+  - Tidied Daemon.pm
+  - Turned on EOL and tab tests
+  - Removed obvious indirect object syntax in test suite
+  - Added IPv6 support. (GH#24) Thanks, @ppisar and @intrigeri
+  - Added IO::Socket::IP as a prerequisite rather than IO::Socket::INET
+
+6.04      2019-04-02 13:09:45Z
+  - Remove circular dependency on LWP::RobotUA introduced in 6.02 (GH#29)
+    (Olaf Alders)
+
+6.03      2019-04-01 20:56:38Z
+  - Remove circular dependency with LWP::UserAgent introduced in 6.02 (GH#27)
+    (Olaf Alders)
+
+6.02      2019-04-01 16:03:37Z
+  - Added a .mailmap to properly keep up with contributors to the dist.
+  - Revised the changelog to follow current format styles
+  - Change port number in test (GH#5) (Perlover)
+
+6.01    2012-02-18
+  - If you bind localhost, don't trust gethostbyaddr() to resolve the address.
+    RT#67247
+  - Restore perl-5.8.1 compatiblity.
+
+6.00    2011-02-25
+  - Initial release of HTTP-Daemon as a separate distribution. There are no code
+    changes besides incrementing the version number since libwww-perl-5.837.
+  - The HTTP::Daemon used to be bundled with the libwww-perl distribution.
